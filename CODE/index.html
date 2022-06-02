@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>HOME</title>
+	<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	<link rel="stylesheet" href="font/iconfont.css">
+</head>
+<body>
+<div class="admin">
+	<div class="menu">
+		<div class="user">
+			<div class="face"><img src="img/face.jpg"></div>
+			<div class="info">
+				<h2>Black_Cat</h2>
+				<p>@imablackcat</p>
+			</div>
+		</div>
+		<div class="nav">
+			<ul>
+				<li class="on"><a href="index.html"><i class="iconfont icon-tasks a1"></i><span>TASKS</span><i class="iconfont icon-jiantou a2"></i></a></li>
+				<li><a href="time.html"><i class="iconfont icon-timer a1"></i><span>TIMER</span><i class="iconfont icon-jiantou a2"></i></a></li>
+				<li><a href="music.html"><i class="iconfont icon-music-o a1"></i><span>MUSIC</span><i class="iconfont icon-jiantou a3"></i></a></li>
+				<li><a href="search.html"><i class="iconfont icon-dictionary a1"></i><span>DICTIONARY</span><i class="iconfont icon-jiantou a4"></i></a></li>
+			</ul>
+		</div>
+		<div class="menubom">
+			<a href="javascript:;"><i class="iconfont icon-shezhi"></i></a>
+			<a href="javascript:;"><i class="iconfont icon-bangzhu"></i></a>
+		</div>
+		<div class="menuClose"><a href="javascript:;"><i class="iconfont icon-guanji"></i></a></div>
+	</div>
+	<div class="ifram tasks">
+		<div class="pub_title">Day <b>5</b> Of Your Jspanses Journey</div>
+		<div class="task_tit">Tasks</div>
+		<div class="task_mid">
+			<div class="task_l">
+				<div class="task_type">
+					<a href="javascript:;" onclick="opentask('addform')"><i class="iconfont icon-jiahao"></i></a>
+				</div>
+				<div class="task_empty">You have not added any tasks yet.</div>
+				<div class="task_list">
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="task_r">
+				<ul>
+					<li><a href="javascript:;">Medium</a></li>
+					<li><a href="javascript:;">High</a></li>
+					<li><a href="javascript:;">Other</a></li>
+					<li><a href="javascript:;">Low</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="addform">
+		<form action="" method="post" name="add_task" onsubmit="return addtask();">
+			<div class="li"><p>Task:</p><input type="text" class="text" name="task" required></div>
+			<div class="li"><p>Due Date:</p><input type="date" class="text" name="dqr" required></div>
+			<div class="li"><p>Completion Time:</p><input type="time" class="text" name="wcsj" required></div>
+			<div class="li"><p>Estimated completion time (in mins):</p><input type="number" name="yjwc" min="0" class="text" required></div>
+			<div class="li"><p>Task Priority:</p>
+				<select name="leve" class="text" required>
+					<option value="">Select One</option>
+					<option value="Low">Low</option>
+					<option value="Medium">Medium</option>
+					<option value="High">High</option>
+					<option value="Other">Other</option>
+				</select>
+			</div>
+			<button>Submit</button>
+		</form>
+		<div class="closeTask"><a href="javascript:;"><i class="iconfont icon-guanbi"></i></a></div>
+	</div>
+</div>
+
+<div class="showmen"><i class="iconfont icon-zhankai-"></i></div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/task.js"></script>
+</body>
+</html>
