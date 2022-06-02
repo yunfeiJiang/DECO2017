@@ -188,3 +188,9 @@ body{font-size: 14px; font-family: "microsoft yahei"; color: #5c5558;}
 	.music{padding-bottom:80px !important;}
 	.music .list ul li{padding: 0 5px; font-size: 14px;}
 }
+
+#result {
+    padding: 20px;
+    font-size: 20px;
+    color: black;
+}
