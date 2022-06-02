@@ -1,0 +1,190 @@
+*{padding: 0; margin: 0; box-sizing: border-box; outline: none; border: none;}
+a{text-decoration: none; color: #5c5558;}
+ul,li{list-style-type: none;}
+body{font-size: 14px; font-family: "microsoft yahei"; color: #5c5558;}
+
+.admin{width: 100%; min-height: 100vh; overflow: hidden;}
+.menu{width: 230px; height: 100vh; background: #ffe6e6; position: fixed; top: 0; left: 0; z-index: 99;}
+.menu .user{width: 100%; height: 50px; overflow: hidden; margin: 60px 0 40px; display: flex; justify-content: center; align-items: center;}
+.menu .user .face img{width: 50px; height: 50px; display: block; border-radius: 100%;}
+.menu .user .info{padding: 0 8px;}
+.menu .user .info h2{font-size: 18px;}
+.menu .nav{width: 100%; height: auto; overflow: hidden;}
+.menu .nav ul li a{width: 100%; height: 50px; border-bottom: 1px dotted #ccc; display: flex; justify-content: space-between; align-items: center; padding:0 20px; }
+.menu .nav ul li a i.a1{font-size: 20px;}
+.menu .nav ul li span{flex: 1; font-weight: bold; text-indent: 20px;}
+.menu .nav ul li a:hover i,.menu .nav ul li a:hover span{color: #d6697a;}
+.menu .nav ul li.on a i,.menu .nav ul li.on a span{color: #d6697a;}
+.menu .menuClose{position: absolute; top: 15px; right: 15px; cursor: pointer;}
+.menu .menuClose i{font-size: 20px;}
+.menu .menuClose a:hover i{color: #d6697a;}
+.menu .menubom{position: absolute; bottom: 30px; left: 20px;}
+.menu .menubom a{ margin-right: 20px;}
+.menu .menubom a i{font-size: 25px;}
+.menu .menubom a:hover i{color: #d6697a;}
+
+.ifram{width: 100%; padding:40px 40px 40px 270px; min-height: 100vh; background: #fff; position: relative;}
+.pub_title{font-size: 30px; font-weight: bold;}
+.pub_title b{color: #d6697b;}
+.tasks .task_tit{width: 100%; height: auto; overflow: hidden; margin: 30px 0; padding: 15px 0; background: #dce9d9; font-size: 20px; text-align: center; font-weight: bold; border-radius: 10px;}
+.tasks .task_mid{width: 100%; height: auto; overflow: hidden; display: flex;justify-content: space-between;}
+/*---task_l---*/
+.tasks .task_mid .task_l{width: 48%; min-height: 600px; display: flex; flex-direction: column; overflow: hidden; background: #ffe6e6; border-radius: 10px;}
+.tasks .task_mid .task_type{width: 100%; height: auto; overflow: hidden; padding: 15px 20px; box-shadow: 0 0 5px rgba(0,0,0,0.3);}
+.tasks .task_mid .task_type a{display: block; float: right; width: 30px; border-radius: 5px; height: 30px; line-height: 30px; text-align: center; background: #d6697a;}
+.tasks .task_mid .task_type a i{transition: all 0.4s; display: block;}
+.tasks .task_mid .task_type a:hover i{transform: rotate(360deg);}
+.tasks .task_mid .task_type i{font-size: 18px; color: #fff;}
+.tasks .task_mid .task_empty{flex: 1; display: none; align-items: center; justify-content: center; font-size: 30px;}
+.tasks .task_mid .task_list{flex: 1; display: none;}
+.tasks .task_mid .task_list ul{padding: 15px;}
+.tasks .task_mid .task_list ul li{width: 100%; height: auto; padding: 10px 0; cursor: pointer; border-bottom: 1px dotted #ccc; overflow: hidden; display: flex; align-items: center; justify-content: space-between;}
+.tasks .task_mid .task_list ul li .icon{width: 15px; height: 15px; border: 2px solid #d6697a; border-radius: 100%; margin-right: 10px;}
+.tasks .task_mid .task_list ul li.on .icon{background: #d6697a;}
+.tasks .task_mid .task_list ul li .tit{flex: 1;}
+.tasks .task_mid .task_list ul li .pdd{padding: 0 10px;}
+.tasks .task_mid .task_list ul li .btn{display: flex;}
+.tasks .task_mid .task_list ul li .btn a{width: 40px; height: 25px; border-radius: 5px; display: block; margin-left: 8px; background: #ddd; color: #d6697a; display: flex; align-items: center; justify-content: center;}
+.tasks .task_mid .task_list ul li .btn a i{font-size: 14px;}
+.tasks .task_mid .task_list ul li .btn a:hover{background: #d6697a; color: #fff;}
+/*---task_r---*/
+.tasks .task_mid .task_r{width: 48%; min-height: 600px; overflow: hidden; background: #ffe6e6; border-radius: 10px; position: relative;}
+.tasks .task_mid .task_r::before{ content: 'Urgent'; font-weight: bold; text-indent: 10px; position: absolute; left: 50%; top: 50%; transform: translate(0,-50%); width: 3px; height: 90%; background: #d6697b;}
+.tasks .task_mid .task_r::after{content: 'Important'; font-weight: bold; text-align: right; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 90%; height: 3px; background: #d6697b;}
+.tasks .task_mid .task_r ul{display: flex; height: 100%; flex-wrap: wrap;}
+.tasks .task_mid .task_r ul li{width: 50%; height: 25vh; display: flex; align-items: center; justify-content: center;}
+.tasks .task_mid .task_r ul li a{display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 100%; background: #fff; color: #d6697a;}
+.tasks .task_mid .task_r ul li.on a{color: #fff; background: #d6697a;}
+/*---addTask editTask---*/
+.addform{width: 100%; height: 100vh; padding: 0 20px; background: rgba(0,0,0,0.8); position: fixed; left: 0; top: 0; display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 999;}
+.addform .li{margin-bottom: 20px;}
+.addform .li p{font-size: 20px; color: #fff; margin-bottom: 5px;}
+.addform .li .text{width: 100%; height: 45px; text-indent: 8px; border-radius: 5px; font-size: 16px;}
+.addform button{width: 120px; height: 40px; background: #d6697a; color: #fff; cursor: pointer; font-size: 16px; border-radius: 5px;}
+.editform{width: 100%; height: 100vh; padding: 0 20px; background: rgba(0,0,0,0.8); position: fixed; left: 0; top: 0; display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 999;}
+.editform .li{margin-bottom: 20px;}
+.editform .li p{font-size: 20px; color: #fff; margin-bottom: 5px;}
+.editform .li .text{width: 100%; height: 45px; text-indent: 8px; border-radius: 5px; font-size: 16px;}
+.editform button{width: 120px; height: 40px; background: #d6697a; color: #fff; cursor: pointer; font-size: 16px; border-radius: 5px;}
+.closeTask{position: absolute; top: 10px; right: 10px;}
+.closeTask i{font-size: 30px; color: #fff;}
+.closeTask a:hover i{color: #d6697a;}
+
+/*---Time---*/
+.times{width: 100%; height: auto; overflow: hidden;}
+.times .tabnav{width: 100%; height: auto; overflow: hidden; margin-top: 30px;}
+.times .tabnav ul{width: 100%; height: auto; overflow: hidden; display: flex; justify-content: space-between;}
+.times .tabnav ul li{width: 48%;}
+.times .tabnav ul li a{width: 100%; background: #dce9d9; padding: 15px 0; display: block; border-radius: 10px; text-align: center; font-size: 20px;}
+.times .tabnav ul li.on a{background: #e7bbc2;}
+.times .tabbox .item{display: none;}
+.times .tabbox .item.on{display: block;}
+.times .tabbox .timer{width: 100%; height: auto; overflow: hidden; text-align: center;}
+.times .tabbox .timer span{font-size: 12vw; font-weight: bold; padding:0 1vw;}
+.times .tabbox .fanq{width: 100%; height: auto; overflow: hidden; display: flex; justify-content: space-between;}
+.times .tabbox .list ul{display: flex;}
+.times .tabbox .list h2{padding:3vh 0; font-size: 30px;}
+.times .tabbox .list .u1 li i{font-size: 6vw;}
+.times .tabbox .list .u2 li i{font-size: 3vw;}
+.times .tabbox .btn{display: flex; justify-content: flex-end;}
+.times .tabbox .btn a{width: 80px; height: 80px; border-radius: 100%; margin-left: 20px; font-size: 16px; color: #fff; background: #e7bbc2; display: flex; align-items: center; justify-content: center;}
+.times .tabbox .btn a:first-child{background: #d66a7c;}
+
+/*---music---*/
+.music .music_tit{width: 100%; height: auto; overflow: hidden; padding:0 0 15px; font-size: 20px; border-bottom: 1px solid #ccc;}
+.music .lunbo {width: 100%; height: 300px; overflow: hidden; padding: 15px 0 50px; position: relative; margin: 20px 0;}
+.music .lunbo ul{overflow: hidden; height: auto; position:absolute; left: 0; top: 0;}
+.music .lunbo ul li{float: left; width: 300px; height: auto; margin-right: 10px; position: relative;}
+.music .lunbo ul li img{display: block; width: 100%; height:100%;}
+.music .lunbo ul li .text{position: absolute; bottom: 0; background: rgba(0,0,0,0.5); color: #fff; padding:5px 10px; width: 100%;}
+.music .lunbo ul li .text h2{font-size: 16px;}
+.music .list{padding: 10px 0; height: auto; overflow: hidden;}
+.music .list ul li{display: flex; justify-content: space-between; height: 50px; padding: 0 15px; cursor: pointer; color: #d6697b; border-bottom: 1px dotted #ccc; align-items: center; font-size: 16px;}
+.music .list ul li .tit{flex: 1; display: flex; align-items: center;}
+.music .list ul li .tit i{padding-right: 10px; color: #e7bbc2;}
+.music .list ul li .tit i.on{color: #d6697b;}
+.music .list ul li .time{padding-left: 30px;}
+.music .list ul li:hover {background:#f1d9d9}
+.playobj{position: fixed; width: auto; bottom: 0px; padding: 20px 0; left: 230px; right: 0px; height: auto; background: #eee; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.playobj .playmp{color: #d6697a; padding-bottom: 15px; display: none;}
+.playobj .playmp span{animation: wzdh 3s infinite; display: block;}
+.playobj .playbtn{display: flex; align-items: center;}
+.playobj .playbtn div{width: 35px; height: 35px; border: 1px solid #d6697a; border-radius: 100%; display: flex; align-items: center; justify-content: center; cursor: pointer;}
+.playobj .playbtn div:hover{background: #d6697a; color: #fff;}
+.playobj .playbtn div:hover i{color: #fff;}
+.playobj .playbtn i{font-size: 14px; color: #d6697b;}
+.playobj .playbtn .play{margin: 0 20px;}
+.playobj .playbtn .play i{font-size: 20px;}
+
+/*---search---*/
+.search{width: 100%; height: auto; overflow: hidden;}
+.search form{width: 100%; height: 50px; border-radius: 50px; background: #ffe6e6; display: flex; align-items: center; justify-content: space-between;}
+.search form input{flex:1; height: 100%; background: none; font-size: 16px; text-indent: 20px;}
+.search form button{width: 60px; height: 50px; cursor: pointer; background: none;}
+.search form button i{font-size: 20px; color: #d66a7c;}
+
+
+.showmen{width: 20px; height: 80px; position: fixed; left: 0; top: 50%; transform: translateY(-50%); border-top-right-radius: 5px; border-bottom-right-radius: 5px; cursor: pointer; background: #d6697b; z-index: 999; display: none; align-items: center; justify-content: center;}
+.showmen i{color: #fff; font-size: 14px;}
+@keyframes wzdh{
+	0%{
+		transform: translateX(0);
+	}
+	25%{
+		transform: translateX(-100px)
+	}
+	50%{
+		transform: translateX(0);
+	}
+	75%{
+		transform: translateX(100px);
+	}
+	100%{
+		transform: translateX(0);
+	}
+}
+
+@media(max-width:1400px){
+	.tasks .task_mid .task_empty{font-size: 16px;}
+}
+
+@media(max-width:1300px){
+	.tasks .task_mid{flex-direction: column;}
+	.tasks .task_mid .task_l{width: 100%;}
+	.tasks .task_mid .task_r{width: 100%; margin-top: 30px;}
+}
+
+@media(max-width:992px){
+	.menu{display: none;}
+	.showmen{display: flex;}
+	.ifram{padding-left: 50px !important;}
+	.playobj{left:0;}
+	
+	.tasks .task_mid .task_l,.tasks .task_mid .task_r{min-height: 350px !important;}
+}
+
+@media(max-width:768px){
+	.pub_title{font-size: 20px;}
+	.ifram{padding: 20px 10px !important;}
+	.playobj{padding: 10px 0;}
+	
+	.addform .li p{font-size: 16px;}
+	
+	.tasks .task_mid .task_list ul{padding: 15px 10px;}
+	.tasks .task_mid .task_list ul li .icon{width: 10px; height: 10px;}
+	.tasks .task_mid .task_list ul li .pdd{padding: 0 5px;}
+	.tasks .task_mid .task_list ul li .dqr{display: none;}
+	.tasks .task_mid .task_list ul li .btn a{width: 20px; height: 20px;}
+	.tasks .task_mid .task_list ul li .btn a i{font-size: 12px;}
+	
+	.times .tabnav ul li a{font-size: 16px;}
+	.times .tabbox .timer{padding: 20px 0;}
+	.times .tabbox .timer span{font-size: 16vw;}
+	.times .tabbox .btn a{width: 45px; height: 45px; font-size: 12px; margin-left: 10px;}
+	.times .tabbox .list .u1 li i{font-size: 12vw;}
+	.times .tabbox .list .u2 li i{font-size: 6vw;}
+	.times .tabbox .list h2{font-size: 16px;}
+	
+	.music{padding-bottom:80px !important;}
+	.music .list ul li{padding: 0 5px; font-size: 14px;}
+}
